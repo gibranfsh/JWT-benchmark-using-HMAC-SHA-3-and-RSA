@@ -82,7 +82,7 @@ func init() {
 func createRSAToken(privateKey *rsa.PrivateKey) (string, error) {
     token := jwt.New(jwt.GetSigningMethod("RS256"))
     claims := jwt.MapClaims{
-        "foo": "bar",
+        "foo": "bar", // ini adalah contoh payload
     }
     token.Claims = claims
     return token.SignedString(privateKey)

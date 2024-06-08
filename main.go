@@ -1,3 +1,6 @@
+// File: main.go
+// Berikut adalah program untuk benchmarking pembuatan dan verifikasi token JWT dengan algoritma RSA dan HMAC SHA-3.
+
 package main
 
 import (
