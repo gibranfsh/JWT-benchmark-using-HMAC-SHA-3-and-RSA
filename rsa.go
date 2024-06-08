@@ -1,3 +1,6 @@
+// File: rsa.go
+// Berikut adalah program untuk membuat dan memverifikasi token JWT dengan algoritma RSA.
+
 package main
 
 import (

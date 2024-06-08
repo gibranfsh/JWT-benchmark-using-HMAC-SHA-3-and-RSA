@@ -1,3 +1,6 @@
+// File: hmac-sha-3.go
+// Berikut adalah program untuk membuat dan memverifikasi token JWT dengan algoritma HMAC SHA-3.
+
 package main
 
 import (

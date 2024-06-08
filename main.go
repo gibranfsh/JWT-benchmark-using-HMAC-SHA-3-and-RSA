@@ -34,14 +34,18 @@ func benchmarkRSA(privateKey *rsa.PrivateKey, publicKey *rsa.PublicKey) {
 
 	// Benchmark token verification
 	tokenString, _ := createRSAToken(privateKey)
+
+	// print tokenString
+	fmt.Println("JWT hasil generasi menggunakan RSA: ", tokenString+"\n")
+
 	start = time.Now()
 	for i := 0; i < 1000; i++ {
 		verifyRSAToken(tokenString, publicKey)
 	}
 	verificationTime := time.Since(start)
 
-	fmt.Println("RSA Token Creation Time:", creationTime)
-	fmt.Println("RSA Token Verification Time:", verificationTime)
+	fmt.Println("1000x JWT Creation using RSA Time:", creationTime)
+	fmt.Println("1000x JWT Verification using RSA Time:", verificationTime)
 }
 
 // Function to benchmark HMAC SHA-3 token creation and verification
@@ -55,12 +59,16 @@ func benchmarkHMACSHA3(hmacSecret []byte) {
 
 	// Benchmark token verification
 	tokenString, _ := createHMACSHA3Token(hmacSecret)
+
+	// print tokenString
+	fmt.Println("\nJWT hasil generasi menggunakan HMAC SHA-3: ", tokenString+"\n")
+
 	start = time.Now()
 	for i := 0; i < 1000; i++ {
 		verifyHMACSHA3Token(tokenString, hmacSecret)
 	}
 	verificationTime := time.Since(start)
 
-	fmt.Println("HMAC SHA-3 Token Creation Time:", creationTime)
-	fmt.Println("HMAC SHA-3 Token Verification Time:", verificationTime)
+	fmt.Println("1000x JWT Creation using HMAC SHA-3 Time:", creationTime)
+	fmt.Println("1000x JWT Verification using HMAC SHA-3 Time:", verificationTime)
 }
