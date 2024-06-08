@@ -1,4 +1,4 @@
-package algorithms
+package main
 
 import (
     "crypto/hmac"
@@ -8,17 +8,14 @@ import (
     "golang.org/x/crypto/sha3"
 )
 
-// HMACSHA3SigningMethod represents the HMAC SHA-3 signing method
 type HMACSHA3SigningMethod struct {
     Name string
 }
 
-// Alg returns the name of the signing method
 func (m *HMACSHA3SigningMethod) Alg() string {
     return m.Name
 }
 
-// Sign signs the token using the HMAC SHA-3 algorithm
 func (m *HMACSHA3SigningMethod) Sign(signingString string, key interface{}) (string, error) {
     var keyBytes []byte
 
@@ -36,7 +33,6 @@ func (m *HMACSHA3SigningMethod) Sign(signingString string, key interface{}) (str
     return base64.RawURLEncoding.EncodeToString(mac.Sum(nil)), nil
 }
 
-// Verify verifies the token using the HMAC SHA-3 algorithm
 func (m *HMACSHA3SigningMethod) Verify(signingString, signature string, key interface{}) error {
     var keyBytes []byte
 
@@ -63,14 +59,12 @@ func (m *HMACSHA3SigningMethod) Verify(signingString, signature string, key inte
     return nil
 }
 
-// Initialize the custom HMAC SHA-3 signing method
 func init() {
     jwt.RegisterSigningMethod("HS3", func() jwt.SigningMethod {
         return &HMACSHA3SigningMethod{Name: "HS3"}
     })
 }
 
-// createHMACSHA3Token creates a JWT signed with HMAC SHA-3
 func createHMACSHA3Token(secret []byte) (string, error) {
     token := jwt.New(jwt.GetSigningMethod("HS3"))
     claims := jwt.MapClaims{
@@ -80,7 +74,6 @@ func createHMACSHA3Token(secret []byte) (string, error) {
     return token.SignedString(secret)
 }
 
-// verifyHMACSHA3Token verifies a JWT signed with HMAC SHA-3
 func verifyHMACSHA3Token(tokenString string, secret []byte) (*jwt.Token, error) {
     return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
         if token.Method.Alg() != "HS3" {
