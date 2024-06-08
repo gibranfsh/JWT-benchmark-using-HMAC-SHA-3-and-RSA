@@ -12,6 +12,7 @@ This project demonstrates the implementation and benchmarking of JSON Web Tokens
 - [Benchmark Results](#benchmark-results)
 - [Conclusion](#conclusion)
 - [Future Work](#future-work)
+- [Credits](#credits)
 
 ## Introduction
 
@@ -83,4 +84,6 @@ Future work on this project could include:
 - Extending the benchmarking to include more comprehensive performance metrics and security analysis.
 - Integrating the JWT implementation with a web application to demonstrate real-world use cases.
 
+## Credits
 
+This project was created by Gibran Fasha Ghazanfar - 18221069
