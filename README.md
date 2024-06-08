@@ -49,7 +49,7 @@ The project includes two main files: `hmac_sha3.go` and `rsa.go`, which contain 
 To run the benchmarking and see the results, execute the following command:
 
 ```
- go run main.go rsa.go hmac_sha3.go
+ go run main.go rsa.go hmac-sha-3.go
 ```
 
 This command will generate and verify JWTs using both RSA and HMAC SHA-3 algorithms, and output the performance results and generated tokens to the console.
