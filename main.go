@@ -39,12 +39,6 @@ func main() {
 
 	fmt.Println("")
 
-	// Test expiration handling
-	fmt.Println("=== Expiration Handling Test ===")
-	expirationHandling(privateKey, publicKey)
-
-	fmt.Println("")
-
 	// Test algorithm confusion
 	fmt.Println("=== Algorithm Confusion Test ===")
 	algorithmConfusion(privateKey, publicKey, hmacSecret)
