@@ -1,3 +1,6 @@
+// File: payloadSizeImpact.go
+// Berikut adalah program untuk menguji pengaruh ukuran payload pada pembuatan dan verifikasi token JWT dengan algoritma RSA dan HMAC SHA-3.
+
 package main
 
 import (

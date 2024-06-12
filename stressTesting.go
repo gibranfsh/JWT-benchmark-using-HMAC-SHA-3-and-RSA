@@ -1,3 +1,6 @@
+// File: stressTesting.go
+// Berikut adalah program untuk melakukan stress testing dengan membuat dan memverifikasi token secara parallel.
+
 package main
 
 import (

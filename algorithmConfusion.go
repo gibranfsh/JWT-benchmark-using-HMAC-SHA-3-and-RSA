@@ -9,8 +9,6 @@ import (
 
 // Function for algorithm confusion test
 func algorithmConfusion(privateKey *rsa.PrivateKey, publicKey *rsa.PublicKey, hmacSecret []byte) {
-	fmt.Println("=== Algorithm Confusion Test ===")
-
 	// Create RSA token
 	rsaToken, err := createRSAToken(privateKey)
 	if err != nil {
