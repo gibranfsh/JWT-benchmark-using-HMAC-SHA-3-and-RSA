@@ -1,6 +1,6 @@
-# JWT Benchmarking with RSA and HMAC SHA-3
+# JWT (RSA and HMAC SHA-3) Performance and Security Evaluation
 
-This project demonstrates the implementation and benchmarking of JSON Web Tokens (JWT) using RSA and HMAC SHA-3 algorithms. The project includes code to generate and verify JWTs, as well as to benchmark their performance and analyze their security against common threats.
+This project demonstrates the implementation and performace and security evaluation of JSON Web Tokens (JWT) that was generated using RSA and HMAC SHA-3 algorithms. The project includes code to generate and verify JWTs, as well as to evaluate their performance and analyze their security against common threats.
 
 ## Table of Contents
 
@@ -8,15 +8,16 @@ This project demonstrates the implementation and benchmarking of JSON Web Tokens
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Running the Benchmark](#running-the-benchmark)
-- [Benchmark Results](#benchmark-results)
+  - [Running the Program](#running-the-program)
+- [Program Results](#program-results)
 - [Conclusion](#conclusion)
 - [Future Work](#future-work)
 - [Credits](#credits)
 
 ## Introduction
 
-This project aims to evaluate the performance and security of JWTs generated using two different cryptographic algorithms: RSA (2048-bit) and HMAC SHA-3 (256-bit). The evaluation includes benchmarking the token creation and verification processes and analyzing the resistance of these tokens to common security threats such as brute force attacks, MITM attacks, and token forgery.
+This project aims to evaluate the performance and security of JWTs generated using two different cryptographic algorithms: RSA (2048-bit) and HMAC SHA-3 (256-bit). The evaluation includes benchmarking the token creation and verification processes and analyzing the resistance of these tokens to common security threats by conducting various tests such as Benchmarking Test, Algorithm-Confusion Test, Integrity Checking Test, Payload Size Impact Test, Stress Testing.
+
 
 ## Requirements
 
@@ -40,21 +41,15 @@ cd JWT-benchmark-using-HMAC-SHA-3-and-RSA
 go mod tidy
 ```
 
-## Usage
+### Running the Program
 
-The project includes two main files: `hmac_sha3.go` and `rsa.go`, which contain the implementation of JWTs using HMAC SHA-3 and RSA algorithms, respectively. To run the benchmark, execute the following command:
-
-### Running the Benchmark
-
-To run the benchmarking and see the results, execute the following command:
+To run the program and see the results, execute the following command:
 
 ```
 go run main.go hmac-sha-3.go rsa.go algorithmConfusion.go benchmark.go integrityCheck.go payloadSizeImpact.go stressTesting.go
 ```
 
-This command will generate and verify JWTs using both RSA and HMAC SHA-3 algorithms, and output the performance results and generated tokens to the console.
-
-## Benchmark Results
+## Program Results
 
 Example output from running the benchmark:
 
